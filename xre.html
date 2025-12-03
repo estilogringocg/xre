@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aguarde...</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 90%;
+            width: 400px;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .timer {
+            font-size: 60px;
+            font-weight: bold;
+            color: #007bff;
+            margin: 20px 0;
+            display: block;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Redirecionando</h1>
+        <p>Aguarde, você será levado para o destino em:</p>
+        
+        <span class="timer" id="countdown">10</span>
+        
+        <p>segundos.</p>
+
+        <br>
+        <p style="font-size: 12px; color: #666;">
+            Caso não carregue automaticamente,<br>
+            <a href="https://rifa.digital/s/mluFUUWaw0b" class="btn">Acessar agora</a>
+        </p>
+    </div>
+
+    <script>
+        var timeLeft = 10;
+        var elem = document.getElementById('countdown');
+        
+        // Link de destino
+        var targetUrl = "https://rifa.digital/s/mluFUUWaw0b";
+
+        var timerId = setInterval(startTimer, 1000);
+
+        function startTimer() {
+            if (timeLeft == 0) {
+                clearTimeout(timerId);
+                window.location.replace(targetUrl);
+            } else {
+                elem.innerHTML = timeLeft;
+                timeLeft--;
+            }
+        }
+    </script>
+
+</body>
+</html>
